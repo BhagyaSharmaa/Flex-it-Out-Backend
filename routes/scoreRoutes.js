@@ -11,6 +11,16 @@ router.get("/", async (req, res) => {
     }
 });
 
+router.get("/leaderboard", async (req, res) => {
+    try {
+        const topScores = await Score.find().sort({ score: -1 }).limit(5);
+        res.json(topScores);
+    } catch (err) {
+        res.status(500).json({ error: "Failed to fetch leaderboard" });
+    }
+})
+
+
 router.post("/", async (req, res) => {
     try {
         const { username, score } = req.body;

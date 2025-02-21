@@ -24,7 +24,7 @@ app.post("/signup", (req, res) => {
     // signup logic
 });
 
-const workoutPlanRoutes = require("./routes/WorkoutPlan.Routes");
+const workoutPlanRoutes = require("./routes/workoutPlanRoutes");
 app.use("/api/workouts", workoutPlanRoutes);
 
 
@@ -33,5 +33,5 @@ app.use("/api/scores", scoreRoutes);
 
 
 app.listen(PORT, () => {
-    console.log(`Server running or PORT ${PORT}`);
+    console.log(`Server running on PORT ${PORT}`);
 });
