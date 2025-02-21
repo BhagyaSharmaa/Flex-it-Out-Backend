@@ -24,6 +24,14 @@ app.post("/signup", (req, res) => {
     // signup logic
 });
 
+const workoutPlanRoutes = require("./routes/WorkoutPlan.Routes");
+app.use("/api/workouts", workoutPlanRoutes);
+
+
+const scoreRoutes = require("./routes/scoreRoutes");
+app.use("/api/scores", scoreRoutes);
+
+
 app.listen(PORT, () => {
     console.log(`Server running or PORT ${PORT}`);
 });
